@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+AR:wght@100..400&family=Playwrite+DK+Loopet:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #00adb5;/* 00adb5 cc0066 */
+}
+
+.container{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 70px;
+    height: 100vh;
+    color: white;
+}
+
+.title p{
+    font-size: 20px;
+    font-family: "Playwrite DK Loopet", cursive;
+    margin: 10px 0;
+}
+
+h1{
+    font-size: 45px;
+    font-family:  "Fjalla One", sans-serif;
+}
+
+.players{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.names{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.names input{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 0px;
+    border: 2px solid rgba(255, 255, 255, 0.607);
+    border-radius: 7px;
+    width: 150px;
+    text-transform: capitalize;
+    color: white;
+    transition: 2s;
+    padding-left: 10px;
+}
+
+.names input::placeholder{
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.784);
+}
+
+.names input:focus{
+    outline: none;
+}
+
+button{
+    font-size: 18px;
+    padding: 5px 15px;
+    margin-left: 10px;
+    font-weight: bold;
+    border-radius: 6px;
+    color: #000000;
+    background: #f6f4f4;
+    border: none;
+    box-shadow: 1px 1.5px 2px #998686;
+    transition: 0.5s;
+}
+
+button:hover{
+    box-shadow: 0.5px 1px 0.5px rgba(0, 0, 0, 0.477);
+    background-color:  #179197d1;
+    color: #e8fcfd;
+}
+
+.game-board{
+    display: grid;
+    display: none;
+    position: relative;
+    margin: 50px;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 10px;
+    justify-content: center;
+}
+
+.board-item {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.back, .front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    border-radius: 10px;
+}
+
+.board-item.flipped {
+    transform: rotateY(180deg); /* Rotate the front face 180 degrees */
+}
+
+.front{
+    background-image: url(qq.png);
+    background-size: cover;
+
+}
+
+.front:hover {
+    background-color: #f6f4f452;
+}
+
+.back {
+    background-color: #cc0066;
+    transform: rotateY(180deg);
+}  
+
+.result{
+    display: none;
+    margin: 30px 0;
+}
+
+.table-container {
+    max-width: 1000px;
+    max-height: 300px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ddd; 
+    margin: auto;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #0e6267;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+tr:nth-child(odd){
+    background-color: #0e636761;
+}
+
+tr:hover{
+    color: black;
+    opacity: 0.7;
+}
+
+.score{
+    border: 2px solid rgb(208, 208, 208);
+    width: 100px;
+    display: inline-block;
+    font-size: 30px;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .game-board{
+        grid-template-columns: auto auto auto ;
+    }
+}
+
+@media (max-width: 1050px) {
+    .table-container {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 710px) {
+    .table-container {
+        max-width: 400px;
+    }
+}

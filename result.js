@@ -1,5 +1,5 @@
 import { insertGameScore } from './dbconfig.js';
-    
+
 if(localStorage.length !== 0){
     // Retrieve data from local storage
     const dataString = localStorage.getItem('gameHistory');

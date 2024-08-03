@@ -192,7 +192,6 @@ function createArrayOfNumbers(num){
     }
     
     const shuffledArray = shuffleArray(numbers);
-    console.log(shuffledArray);
     localStorage.setItem('shuffledArray', JSON.stringify(shuffledArray));
     return shuffledArray;
 }

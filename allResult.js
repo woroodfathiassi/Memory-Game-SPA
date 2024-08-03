@@ -3,7 +3,6 @@ import { getAllGames } from './dbconfig.js';
 (async () => {
     const games = await getAllGames();
     games.forEach(elemet => {
-        console.log(elemet);
         const row = createRow(elemet['id'], elemet['player1'], elemet['player2'], elemet['score1'], elemet['score2']);
         document.querySelector('.allresulttable').appendChild(row);
     });
